@@ -189,6 +189,8 @@ client.urgent #aa0000 #990000 #ffffff
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/BG-Heartbeat.jpg 
 exec --no-startup-id owncloud
+exec --no-startup-id redshift
+exec --no-startup-id syndaemon -d -i 0.5 -t -K
 
 # Set Resolution
 exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
