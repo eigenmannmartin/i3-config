@@ -94,7 +94,7 @@ bindsym $mod+a focus parent
 set $tag1 "1: www"
 set $tag2 "2: code"
 set $tag3 "3: code2"
-set $tag4 "4: search1"
+set $tag4 "4: mail"
 set $tag5 "5: search2"
 set $tag6 "6: music"
 
@@ -189,8 +189,15 @@ client.urgent #aa0000 #990000 #ffffff
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/BG-Heartbeat.jpg 
 exec --no-startup-id owncloud
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id syndaemon -d -i 0.5 -t -K
+exec --no-startup-id i3-msg 'workspace $tag1; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace $tag2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace $tag2; exec subl'
+exec --no-startup-id i3-msg 'workspace 10; exec i3-sensible-terminal -e htop'
+exec --no-startup-id i3-msg 'workspace 9; exec i3-sensible-terminal -e mc'
+exec --no-startup-id i3-msg 'workspace $tag4; exec thunderbird'
+#exec --no-startup-id i3-msg 'workspace 6; exec spotify'
 
 # Set Resolution
 exec --no-startup-id xrandr --output eDP1 --mode 1920x1080
@@ -203,7 +210,7 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/scre
 # Screen Setup
 bindsym Control+mod4+1 exec sh ~/.i3/intScreen.sh
 bindsym Control+mod4+2 exec sh ~/.i3/extScreen.sh
-
+bindsym Control+mod4+3 exec sh ~/.i3/bothScreen.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
